@@ -30,6 +30,12 @@ function Chart({ data, value, caption }: IChart) {
 
   const formattedData = dataFormatter();
   const option = {
+    label: {
+      show: true,
+      position: 'top',
+      color: 'black',
+      fontSize: 12,
+    },
     xAxis: {
       type: 'category',
       data: formattedData.map((i) => i.caption),

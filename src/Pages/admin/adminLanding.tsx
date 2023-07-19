@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
-import ValueChart from '../../components/ValueChart';
-import MultiValueChart from '../../components/muiltiValueChart';
+
 import useGetRightBottomCart from '../../api/services/RightBottomChart/useGetRightBottomCart';
 import Chart from '../../components/Chart';
 import { IRightBottomType } from '../../api/services/RightBottomChart/rightBottomChartService';
@@ -32,7 +31,11 @@ function AdminLanding() {
             marginY: '16px',
           }}
         >
-          <ValueChart />
+          <Chart
+            data={rightBottomData.data[0]}
+            caption={'PeriodDate' as keyof IRightBottomType['data'][0]}
+            value={'AgenciesScore' as keyof IRightBottomType['data'][0]}
+          />
         </Box>
       </Box>
       <Box sx={{ display: 'flex', width: '100%', gap: '16px', height: '50%' }}>
@@ -45,7 +48,11 @@ function AdminLanding() {
             marginY: '16px',
           }}
         >
-          <MultiValueChart />
+          <Chart
+            data={rightBottomData.data[0]}
+            caption={'PeriodDate' as keyof IRightBottomType['data'][0]}
+            value={'AgenciesScore' as keyof IRightBottomType['data'][0]}
+          />
         </Box>
         <Box
           sx={{
